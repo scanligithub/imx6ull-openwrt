@@ -43,7 +43,8 @@ compiled_successful_flag=0;
 
 compilei() {
 	compiled_successful_flag=0;
-	if make -j $(nproc); then
+	# if make -j $(nproc); then
+        if make V=s -j1; then
 		compiled_successful_flag=1;
 		return
 	else
